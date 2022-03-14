@@ -1,0 +1,25 @@
+{
+  "name": "loopback-cicd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npm run lint:renovate",
+    "lint:renovate": "./scripts/lint-renovate.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loopbackio/cicd.git"
+  },
+  "author": "LoopBack Contributors",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/loopbackio/cicd/issues"
+  },
+  "homepage": "https://github.com/loopbackio/cicd#readme",
+  "devDependencies": {
+    "renovate": "^32.4.1"
+  }
+}
