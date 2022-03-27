@@ -1,0 +1,77 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["group:monorepos", "helpers:disableTypesNodeMajor"],
+  "labels": ["dependencies"],
+  "rangeStrategy": "bump",
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 20,
+  "updateNotScheduled": true,
+  "commitBody": "Signed-off-by: {{{gitAuthor}}}",
+  "ignorePaths": ["**/node_modules/**", "**/__tests__/**", "**/test/**"],
+
+  "semanticCommits": "enabled",
+  "semanticCommitType": "chore",
+  "semanticCommitScope": null,
+
+  "dependencyDashboard": true,
+  "dependencyDashboardAutoclose": true,
+
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+    "extends": ["schedule:earlyMondays"]
+  },
+
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "addLabels": ["SECURITY"],
+    "reviewers": ["team:loopback-maintainers"]
+  },
+
+  "packageRules": [
+    {
+      "automerge": true,
+      "matchUpdateTypes": ["patch", "minor"]
+    },
+    {
+      "draftPR": true,
+      "matchUpdateTypes": "major"
+    },
+    {
+      "automerge": true,
+      "matchDepTypes": "devDependencies"
+    },
+    {
+      "enabled": false,
+      "matchDepTypes": "engines"
+    },
+    {
+      "groupName": "Lint packages",
+      "matchPackageNames": ["prettier"],
+      "matchPackagePatterns": ["^eslint", "^@typescript-eslint"]
+    },
+    {
+      "groupName": "Ajv packages",
+      "matchPackagePatterns": ["^ajv"]
+    },
+    {
+      "groupName": "Socket.io packages",
+      "matchPackageNames": ["socket.io", "socket.io-client"]
+    },
+    {
+      "groupName": "Yeoman packages",
+      "matchPackagePatterns": ["^yeoman"]
+    },
+    {
+      "groupName": "api-extractor packages",
+      "matchPackageNames": [
+        "@microsoft/api-extractor",
+        "@microsoft/api-documenter"
+      ]
+    },
+    {
+      "matchPackageNames": ["renovate"],
+      "extends": ["schedule:earlyMondays"]
+    }
+  ]
+}
