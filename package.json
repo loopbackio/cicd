@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/loopbackio/cicd#readme",
   "devDependencies": {
-    "renovate": "^33.2.0"
+    "renovate": "^34.20.2"
   }
 }
