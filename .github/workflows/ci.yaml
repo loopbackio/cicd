@@ -12,6 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions: {}
     steps:
+      - uses: step-security/harden-runner@8ca2b8b2ece13480cda6dacd3511b49857a23c09 # tag=v2.5.1
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            github.com:443
+            registry.npmjs.org:443
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
