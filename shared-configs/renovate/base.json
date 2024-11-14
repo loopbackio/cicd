@@ -70,6 +70,13 @@
       ]
     },
     {
+      "groupName": "Chai.js packages",
+      "matchPackageNames": [
+        "chai",
+        "chai-as-promised"
+      ]
+    },
+    {
       "matchPackageNames": ["renovate"],
       "extends": ["schedule:earlyMondays"]
     }
