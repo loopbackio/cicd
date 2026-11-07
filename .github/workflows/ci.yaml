@@ -23,7 +23,7 @@ jobs:
             node.js.com:443
             registry.npmjs.org:443
       - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-node@v7.0.0
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: 24.19.0 # LTS
       - name: Install Dependencies
